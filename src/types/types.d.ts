@@ -6,8 +6,6 @@ export interface TodoType {
     isDone: boolean,
 }
 
-
-
 export type TodoAction =
     | {
         type: "ADD",
@@ -26,7 +24,7 @@ export type TodoAction =
     }
 
 export interface form {
-    todo: string,
+    text: string,
     level: number,
     date: string
 }

@@ -12,18 +12,12 @@ function App() {
 
   return (
     <div>
-
-      <Router>
-
         <Routes>
           <Route index element={<Landing />} />
           <Route path='/form' element={<Form />} />
           <Route path='/list' element={<List />} />
           <Route path='*' element={<Notfound />} />
         </Routes>
-
-      </Router>
-
     </div>
   )
 }

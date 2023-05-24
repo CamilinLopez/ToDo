@@ -1,19 +1,13 @@
-//interfaces
-import { TodoType } from "../types/types"
 //hooks
-import { useTodoHook } from "../reducerHook/reducerHooks";
-import { useEffect } from "react";
-
+import { useSelector } from "react-redux"
+//type 
+// import { RootState } from "../redux/reducer"
 
 
 function List() {
 
-  const [todo, _] = useTodoHook();
-
-  useEffect(() => {
-    console.log(todo);
-  }, [todo])
-  
+  const list = useSelector((state) => state)
+  console.log(list)
   return (
     <div>
 

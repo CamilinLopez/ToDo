@@ -1,33 +1,28 @@
 import { useState } from "react"
 import { form } from "../types/types"
+import { useDispatch, useSelector } from 'react-redux';
+import { addToDo } from "../redux/actions";
+import { RootState } from "../redux/reducer";
 
-//hooks
-import { useTodoHook } from '../reducerHook/reducerHooks'
 
 function Form() {
 
     const [texto, setTexto] = useState<form>({
-        todo: "",
+        text: "",
         level: 0,
         date: ""
     });
 
-    const [todo, dispatch] = useTodoHook();
-
+    const dispatch = useDispatch();
 
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        dispatch({
-            type: "ADD",
-            payload: {
-                text: texto.todo,
-                level: texto.level,
-                date: texto.date
-            }
-        })
+
+        dispatch(addToDo(texto))
+        
         setTexto({
-            todo: "",
+            text: "",
             level: 0,
             date: ""
         })
@@ -40,14 +35,17 @@ function Form() {
         })
     }
 
+    const ff = useSelector((state:RootState) => state)
+    console.log(ff);
+    
     return (
         <div>
             <form onSubmit={handleSubmit} >
                 <input
                     type="text"
-                    name="todo"
+                    name="text"
                     onChange={handleOnChange}
-                    value={texto.todo}
+                    value={texto.text}
                 />
                 <input
                     type="range"
@@ -63,8 +61,7 @@ function Form() {
                     onChange={handleOnChange}
                     value={texto.date}
                 />
-                <input type="submit" name="Add" disabled={!texto.todo} />
-
+                <input type="submit" name="Add" disabled={!texto.text} />
             </form>
 
         </div>
