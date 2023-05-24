@@ -1,13 +1,13 @@
 //hooks
 import { useSelector } from "react-redux"
 //type 
-// import { RootState } from "../redux/reducer"
+import { RootState } from "../redux/store";
 
 
 function List() {
 
-  const list = useSelector((state) => state)
-  console.log(list)
+  const { todos } = useSelector((state: RootState) => state)
+  console.log(todos)
   return (
     <div>
 

@@ -3,12 +3,11 @@ import { TodoType, TodoAction } from "../types/types";
 import { v4 as uuidv4 } from "uuid";
 
 interface AppState {
-    todos: TodoType[];
+    todos: TodoType[],
 }
 
 const initialState: AppState = {
-    todos: [],
-};
+    todos: []};
 
 const todoReducer = (state = initialState, action: TodoAction): AppState => {
     switch (action.type) {

@@ -4,7 +4,7 @@ import App from './App.tsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import store from './redux/store.ts'
-import { Provider } from 'react-redux/es/exports'
+import { Provider } from 'react-redux'
 
 
 

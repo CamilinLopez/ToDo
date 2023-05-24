@@ -2,7 +2,7 @@ import { useState } from "react"
 import { form } from "../types/types"
 import { useDispatch, useSelector } from 'react-redux';
 import { addToDo } from "../redux/actions";
-import { RootState } from "../redux/reducer";
+// import { RootState } from "../redux/reducer";
 
 
 function Form() {
@@ -35,7 +35,7 @@ function Form() {
         })
     }
 
-    const ff = useSelector((state:RootState) => state)
+    const ff = useSelector((state:any) => state)
     console.log(ff);
     
     return (
