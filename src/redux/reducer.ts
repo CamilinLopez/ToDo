@@ -7,20 +7,22 @@ interface AppState {
 }
 
 const initialState: AppState = {
-    todos: []};
+    todos: []
+};
 
 const todoReducer = (state = initialState, action: TodoAction): AppState => {
     switch (action.type) {
         case "ADD":
+            console.log(action.payload)
             return {
                 ...state,
                 todos: [
                     ...state.todos,
                     {
-                        id: uuidv4(),
-                        text: action.payload.text,
-                        level: action.payload.level,
-                        date: action.payload.date,
+                        id: "adfasd",
+                        text: "fdsdc",
+                        level: 1,
+                        date: "sddfsd",
                         isDone: false
                     }
 

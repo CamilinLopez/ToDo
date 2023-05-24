@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { form } from "../types/types"
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToDo } from "../redux/actions";
 // import { RootState } from "../redux/reducer";
 
@@ -34,9 +35,6 @@ function Form() {
             [e.currentTarget.name]: e.currentTarget.value
         })
     }
-
-    const ff = useSelector((state:any) => state)
-    console.log(ff);
     
     return (
         <div>
@@ -63,6 +61,8 @@ function Form() {
                 />
                 <input type="submit" name="Add" disabled={!texto.text} />
             </form>
+
+            <Link to="/list">List</Link>
 
         </div>
     );
